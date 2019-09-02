@@ -1,4 +1,4 @@
-div.tabCon {
+div .tabCon {
 	display:none;
 	height:100%;
 }
@@ -17,4 +17,8 @@ button.diagnosisButton {
 
 div.centre {
 	text-align: center;
+}
+
+#addicd {
+	visibility:hidden;
 }
