@@ -52,7 +52,10 @@
 			<tx:method name="save*" propagation="REQUIRED"/>
 			<tx:method name="update*" propagation="REQUIRED"/>
 			<tx:method name="delete*" propagation="REQUIRED"/>
-			<tx:method name="select*" propagation="REQUIRED"/>
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	<!-- 设置切面 -->
@@ -61,4 +64,9 @@
 	</aop:config>
 	
 	<!-- 往spring容器中装配service的bean -->
+	<bean id="loginService" class="com.localhost.model.service.LoginServiceImpl"></bean>
+	<bean id="constantService" class="com.localhost.model.service.ConstantServiceImpl"></bean>
+	<bean id="doctorCategoryService" class="com.localhost.model.service.DoctorCategoryServiceImpl"></bean>
+	<bean id="doctorSystemBaseService" class="com.localhost.model.service.DoctorSystemBaseServiceImpl"></bean>
+	<bean id="outpatientService" class="com.localhost.model.service.OutpatientServiceImpl"></bean>
 </beans>
